@@ -27,7 +27,23 @@ public class Main {
 
         System.out.println(canile.toString());
 
-        System.out.println(canile.togliCane(0));
+        /*System.out.print("Inserisci l'indice del cane che vuoi rimuovere: ");
+
+        int rimuoviCane = in.nextInt();
+
+        canile.togliCane(rimuoviCane);*/
+
+        System.out.print("Inserisci il nome del cane che vuoi adottare: ");
+
+        String rimuoviCane = in.next();
+
+        while (!canile.togliCane(rimuoviCane)){
+            System.out.println("Errore! Non esiste un cane con questo nome. \n");
+            System.out.print("Inserisci il nome del cane che vuoi adottare: ");
+            rimuoviCane = in.nextLine();
+        }
+
+        System.out.println("Cane adottato!");
 
         System.out.println(canile.toString());
     }

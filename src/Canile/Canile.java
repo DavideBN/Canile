@@ -16,15 +16,26 @@ public class Canile {
 
     public boolean togliCane(int posizione){
         if (cani[posizione] != null){
-            caniPresenti--;
-            cani[posizione] = null;
-            for (int i = posizione + 1; i < caniPresenti; i++){
-                cani[i] = cani[i + 1];
+            int i = 0;
+            for (i = posizione; i < caniPresenti-1; i++){
+                cani[i] = new Cane(cani[i + 1].getNome(),cani[i + 1].getRazza(),cani[i + 1].getEta(),cani[i + 1].getSesso());
             }
+            cani[i] = null;
+            caniPresenti--;
             return true;
         }else {
             return false;
         }
+    }
+
+    public boolean togliCane(String nome){
+            for (int i = 0; i < caniPresenti; i++){
+            if (cani[i].getNome().equals(nome)){
+                togliCane(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String toString(){
