@@ -26,5 +26,9 @@ public class Main {
         }
 
         System.out.println(canile.toString());
+
+        System.out.println(canile.togliCane(0));
+
+        System.out.println(canile.toString());
     }
 }

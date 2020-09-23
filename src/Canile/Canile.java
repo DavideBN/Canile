@@ -14,6 +14,19 @@ public class Canile {
         caniPresenti++;
     }
 
+    public boolean togliCane(int posizione){
+        if (cani[posizione] != null){
+            caniPresenti--;
+            cani[posizione] = null;
+            for (int i = posizione + 1; i < caniPresenti; i++){
+                cani[i] = cani[i + 1];
+            }
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     public String toString(){
         String ris = "";
         ris = "Cani presenti: " + caniPresenti + "\n";
