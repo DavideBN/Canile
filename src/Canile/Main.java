@@ -7,44 +7,52 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("Benvenuto!\nInserisci il numero di cani presenti: ");
+        System.out.print("Benvenuto!\nInserisci il numero di canili presenti nella societa': ");
 
-        int cani = in.nextInt();
+        int canili = in.nextInt();
 
-        Canile canile = new Canile(cani);
+        Societa miaSocieta = new Societa(canili);
 
-        for (int i = 0; i < cani; i++){
-            System.out.print("Dammi il nome: ");
-            String nome = in.next();
-            System.out.print("Dammi la razza: ");
-            String razza = in.next();
-            System.out.print("Dammi il eta: ");
-            int eta = in.nextInt();
-            System.out.print("Dammi il sesso: ");
-            char sesso = in.next().charAt(0);
-            canile.nuovoCane(nome,razza,eta,sesso);
-        }
+        for (int i = 0; i < canili; i++){
+            System.out.print("Inserisci il numero di cani presenti nel canile " + (i+1) + ": ");
 
-        System.out.println(canile.toString());
+            int cani = in.nextInt();
 
-        /*System.out.print("Inserisci l'indice del cane che vuoi rimuovere: ");
+            Canile canile = new Canile(cani);
 
-        int rimuoviCane = in.nextInt();
+            for (int j = 0; j < cani; j++){
+                System.out.print("Dammi il nome: ");
+                String nome = in.next();
+                System.out.print("Dammi la razza: ");
+                String razza = in.next();
+                System.out.print("Dammi il eta: ");
+                int eta = in.nextInt();
+                System.out.print("Dammi il sesso: ");
+                char sesso = in.next().charAt(0);
+                canile.nuovoCane(nome,razza,eta,sesso);
+            }
 
-        canile.togliCane(rimuoviCane);*/
+            System.out.println(canile.toString());
 
-        System.out.print("Inserisci il nome del cane che vuoi adottare: ");
+            /*System.out.print("Inserisci l'indice del cane che vuoi rimuovere: ");
 
-        String rimuoviCane = in.next();
+            int rimuoviCane = in.nextInt();
 
-        while (!canile.togliCane(rimuoviCane)){
-            System.out.println("Errore! Non esiste un cane con questo nome. \n");
+            canile.togliCane(rimuoviCane);*/
+
             System.out.print("Inserisci il nome del cane che vuoi adottare: ");
-            rimuoviCane = in.nextLine();
+
+            String rimuoviCane = in.next();
+
+            while (!canile.togliCane(rimuoviCane)){
+                System.out.println("Errore! Non esiste un cane con questo nome. \n");
+                System.out.print("Inserisci il nome del cane che vuoi adottare: ");
+                rimuoviCane = in.nextLine();
+            }
+
+            System.out.println("Cane adottato!");
+
+            System.out.println(canile.toString());
         }
-
-        System.out.println("Cane adottato!");
-
-        System.out.println(canile.toString());
     }
 }
