@@ -4,6 +4,7 @@ public class Cane {
 
     private String nome;
     private String razza;
+
     private int eta;
     private char sesso;
 
@@ -29,6 +30,12 @@ public class Cane {
     public char getSesso(){
         return sesso;
     }
+
+    public void setNome(String nome) { this.nome = nome; }
+
+    public void setRazza(String razza) { this.razza = razza; }
+
+    public void setEta(int eta) {  this.eta = eta; }
 
     public String toString(){
         return this.getNome() + " " + this.getRazza() + " " + this.getEta() + " " + this.getSesso() + "\n";

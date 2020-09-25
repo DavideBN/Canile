@@ -11,8 +11,6 @@ public class Main {
 
         int canili = in.nextInt();
 
-        Societa miaSocieta = new Societa(canili);
-
         for (int i = 0; i < canili; i++){
             System.out.print("Inserisci il numero di cani presenti nel canile " + (i+1) + ": ");
 
