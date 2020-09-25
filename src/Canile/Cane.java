@@ -4,7 +4,6 @@ public class Cane {
 
     private String nome;
     private String razza;
-
     private int eta;
     private char sesso;
 
