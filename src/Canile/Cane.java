@@ -31,11 +31,17 @@ public class Cane {
         return sesso;
     }
 
-    public void setNome(String nome) { this.nome = nome; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public void setRazza(String razza) { this.razza = razza; }
+    public void setRazza(String razza) {
+        this.razza = razza;
+    }
 
-    public void setEta(int eta) {  this.eta = eta; }
+    public void setEta(int eta) {
+        this.eta = eta;
+    }
 
     public String toString(){
         return this.getNome() + " " + this.getRazza() + " " + this.getEta() + " " + this.getSesso() + "\n";
